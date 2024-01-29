@@ -3,11 +3,8 @@
     margin: 0px;
 }
 
-.matrizBack{
-    background-color: aquamarine;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    width: 100px;
-    height: 100px;
+.matriz{
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    gap: 2px;
 }
