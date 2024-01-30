@@ -1,119 +1,65 @@
-const rows = 10;
-const cols = 10;
-const mines = 15;
+const filas = 10;
+const columnas = 10;
+const tablero = [];
 
-const gameBoard = document.getElementById('matriz'); 
-let board = [];
-
-function initializeBoard() {
-  for (let i = 0; i < rows; i++) {
-    board[i] = [];
-    for (let j = 0; j < cols; j++) {
-      board[i][j] = {
-        isMine: false,
-        isOpen: false,
-        count: 0
-      };
+function inicializar() {
+  generarBotones();
+  for (var i = 0; i < filas; i++) {
+    tablero.push([]);
+    for (var j = 0; j < columnas; j++) {
+      tablero[i].push({ tieneMina: false, destapado: false });
     }
   }
 
-  let placedMines = 0;
-  while (placedMines < mines) {
-    const row = Math.floor(Math.random() * rows);
-    const col = Math.floor(Math.random() * cols);
-    if (!board[row][col].isMine) {
-      board[row][col].isMine = true;
-      placedMines++;
+  let minas = 10;
+
+  while (minas > 0) {
+    const fila = Math.floor(Math.random() * filas);
+    const columna = Math.floor(Math.random() * columnas);
+
+    if (!tablero[fila][columna].tieneMina) {
+      tablero[fila][columna].tieneMina = true;
+      minas--;
     }
   }
+}
 
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      if (!board[i][j].isMine) {
-        for (let m = -1; m <= 1; m++) {
-          for (let n = -1; n <= 1; n++) {
-            const newRow = i + m;
-            const newCol = j + n;
-            if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
-              if (board[newRow][newCol].isMine) {
-                board[i][j].count++;
-              }
-            }
-          }
+function generarBotones() {
+  var html = "";
+  for (var i = 0; i < filas; i++) {
+    html += '<div>';
+    for (var j = 0; j < columnas; j++) {
+      html += '<button type="button" onclick="destapa(event.target, ' + i + ',' + j + ')"></button>';
+    }
+    html += '</div>';
+  }
+  document.querySelector('#matriz').innerHTML = html;
+}
+
+function destapa(button, fila, columna) {
+  if (tablero[fila][columna].tieneMina) {
+    button.style.backgroundColor = 'red';
+    button.disabled = true;
+    alert('¡Has perdido!');
+  } else if (minaCercana(fila, columna)){
+    button.style.backgroundColor = 'yellow';
+    button.disabled = true;
+  }else{
+    button.style.backgroundColor = 'white';
+    button.disabled = true;
+    tablero[fila][columna].destapado = true;
+  }
+}
+
+function minaCercana (fila, columna){
+  for(i = fila-1;i<fila +1;i++){
+    for(j = columna-1;j<columna +1;j++){
+        if(i>=0 && j >=0 && i < filas && j < columnas && (i!= fila || j!= columna)){
+        if(tablero[i][j].tieneMina){
+        return true
         }
-      }
     }
+  } 
   }
+  return false;
 }
-
-function renderBoard() {
-  gameBoard.innerHTML = '';
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      const cell = document.createElement('div');
-      cell.classList.add('cell');
-      if (!board[i][j].isOpen) {
-        cell.classList.add('hidden');
-        cell.addEventListener('click', () => revealCell(i, j));
-      } else {
-        if (board[i][j].isMine) {
-          cell.classList.add('mine');
-        } else {
-          cell.textContent = board[i][j].count || '';
-        }
-      }
-      gameBoard.appendChild(cell);
-    }
-  }
-}
-
-function revealCell(row, col) {
-  if (board[row][col].isMine) {
-    alert('¡Has perdido! ¡Había una mina!');
-    resetGame();
-  } else {
-    openCell(row, col);
-    if (checkWin()) {
-      alert('¡Has ganado! ¡Has encontrado todas las celdas seguras!');
-      resetGame();
-    }
-  }
-}
-
-function openCell(row, col) {
-  if (!board[row][col].isOpen) {
-    board[row][col].isOpen = true;
-    if (board[row][col].count === 0) {
-      for (let m = -1; m <= 1; m++) {
-        for (let n = -1; n <= 1; n++) {
-          const newRow = row + m;
-          const newCol = col + n;
-          if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols) {
-            openCell(newRow, newCol);
-          }
-        }
-      }
-    }
-  }
-  renderBoard();
-}
-
-function checkWin() {
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      if (!board[i][j].isMine && !board[i][j].isOpen) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
-
-function resetGame() {
-  board = [];
-  initializeBoard();
-  renderBoard();
-}
-
-initializeBoard();
-renderBoard();

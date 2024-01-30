@@ -4,7 +4,12 @@
 }
 
 .matriz{
-    display: grid;
-    grid-template-columns: repeat(10, 30px);
-    gap: 2px;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+}
+
+button {
+    height: 20px;
+    width: 20px;
 }
