@@ -14,8 +14,8 @@ function inicializar() {
   let minas = 10;
 
   while (minas > 0) {
-    const fila = Math.floor(Math.random() * filas);
-    const columna = Math.floor(Math.random() * columnas);
+    var fila = Math.floor(Math.random() * filas);
+    var columna = Math.floor(Math.random() * columnas);
 
     if (!tablero[fila][columna].tieneMina) {
       tablero[fila][columna].tieneMina = true;
@@ -23,6 +23,20 @@ function inicializar() {
     }
   }
 }
+  /*var x = '';
+  for (var i = 0; i < filas; i++) {
+    for (var j = 0; j < columnas; j++) {
+      if (tablero[i][j].tieneMina) {
+        x += 'M';
+      }
+      else {
+        x += minaCercana(i, j) ? 'X' : ' ';
+      }
+    }
+    x += '\n'
+  }
+  console.log(x);
+}*/
 
 function generarBotones() {
   var html = "";
@@ -41,25 +55,25 @@ function destapa(button, fila, columna) {
     button.style.backgroundColor = 'red';
     button.disabled = true;
     alert('¡Has perdido!');
-  } else if (minaCercana(fila, columna)){
+  } else if (minaCercana(fila, columna)) {
     button.style.backgroundColor = 'yellow';
     button.disabled = true;
-  }else{
+  } else {
     button.style.backgroundColor = 'white';
     button.disabled = true;
     tablero[fila][columna].destapado = true;
   }
 }
 
-function minaCercana (fila, columna){
-  for(i = fila-1;i<fila +1;i++){
-    for(j = columna-1;j<columna +1;j++){
-        if(i>=0 && j >=0 && i < filas && j < columnas && (i!= fila || j!= columna)){
-        if(tablero[i][j].tieneMina){
-        return true
+function minaCercana(fila, columna) {
+  for (i = fila - 1; i <= fila + 1; i++) {
+    for (j = columna - 1; j <= columna + 1; j++) {
+      if (i >= 0 && j >= 0 && i < filas && j < columnas && (i != fila || j != columna)) {
+        if (tablero[i][j].tieneMina) {
+          return true
         }
+      }
     }
-  } 
   }
   return false;
 }
