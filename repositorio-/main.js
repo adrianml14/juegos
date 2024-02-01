@@ -1,12 +1,15 @@
 const filas = 10;
 const columnas = 10;
 const tablero = [];
+let vidas = 5;
 
 function inicializar() {
+  vidas = 5; 
+  actualizarVidas(); 
   generarBotones();
-  for (var i = 0; i < filas; i++) {
+  for (let i = 0; i < filas; i++) {
     tablero.push([]);
-    for (var j = 0; j < columnas; j++) {
+    for (let j = 0; j < columnas; j++) {
       tablero[i].push({ tieneMina: false, destapado: false });
     }
   }
@@ -14,8 +17,8 @@ function inicializar() {
   let minas = 10;
 
   while (minas > 0) {
-    var fila = Math.floor(Math.random() * filas);
-    var columna = Math.floor(Math.random() * columnas);
+    let fila = Math.floor(Math.random() * filas);
+    let columna = Math.floor(Math.random() * columnas);
 
     if (!tablero[fila][columna].tieneMina) {
       tablero[fila][columna].tieneMina = true;
@@ -23,26 +26,12 @@ function inicializar() {
     }
   }
 }
-  /*var x = '';
-  for (var i = 0; i < filas; i++) {
-    for (var j = 0; j < columnas; j++) {
-      if (tablero[i][j].tieneMina) {
-        x += 'M';
-      }
-      else {
-        x += minaCercana(i, j) ? 'X' : ' ';
-      }
-    }
-    x += '\n'
-  }
-  console.log(x);
-}*/
 
 function generarBotones() {
-  var html = "";
-  for (var i = 0; i < filas; i++) {
+  let html = "";
+  for (let i = 0; i < filas; i++) {
     html += '<div>';
-    for (var j = 0; j < columnas; j++) {
+    for (let j = 0; j < columnas; j++) {
       html += '<button type="button" onclick="destapa(event.target, ' + i + ',' + j + ')"></button>';
     }
     html += '</div>';
@@ -52,9 +41,18 @@ function generarBotones() {
 
 function destapa(button, fila, columna) {
   if (tablero[fila][columna].tieneMina) {
-    button.style.backgroundColor = 'red';
+    vidas--;
+    actualizarVidas(); 
+
+    button.style.backgroundColor = 'red'
     button.disabled = true;
-    alert('¡Has perdido!');
+    alert('¡Habia una mina ahi!  *explota*  \n -1 vida')
+
+    if (vidas === 0) {
+      alert('¡Has perdido! Se acabaron las vidas. Reinicia el juego.');
+      resetearJuego();
+    }
+     
   } else if (minaCercana(fila, columna)) {
     button.style.backgroundColor = 'yellow';
     button.disabled = true;
@@ -66,14 +64,25 @@ function destapa(button, fila, columna) {
 }
 
 function minaCercana(fila, columna) {
-  for (i = fila - 1; i <= fila + 1; i++) {
-    for (j = columna - 1; j <= columna + 1; j++) {
+  for (let i = fila - 1; i <= fila + 1; i++) {
+    for (let j = columna - 1; j <= columna + 1; j++) {
       if (i >= 0 && j >= 0 && i < filas && j < columnas && (i != fila || j != columna)) {
         if (tablero[i][j].tieneMina) {
-          return true
+          return true;
         }
       }
     }
   }
   return false;
+}
+
+function actualizarVidas() {
+  document.getElementById('vidas').innerText = 'Vidas: ' + vidas;
+}
+
+function reset() {
+ 
+  tablero.length = 0; 
+  document.querySelector('#matriz').innerHTML = ''; 
+  inicializar();
 }
