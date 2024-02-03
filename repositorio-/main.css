@@ -19,12 +19,13 @@ button {
     height: 63px;
     background-color:#47b698;
     border-radius:6px;
-    border:1px solid #dcdcdc;
+    border: 1px;
     cursor: pointer;
     margin: 1px;
 }
 .Button:hover {
-    background-color:#4a907d;
+    background-color:#1c7cb4;
+    border: 0px;
 }
 .Button:active {
     position:relative;
@@ -43,16 +44,15 @@ button {
     border: 1px solid #999; 
     cursor: pointer;
     background-color:#A59BE2;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Verdana;
-	font-size:20px;
-	padding:10px 10px;
-	text-decoration:none;
-	text-shadow:1px 1px 0px #9752cc;
-
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Verdana;
+    font-size:20px;
+    padding:10px 10px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #9752cc;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -65,12 +65,14 @@ button {
     z-index: 2;
     position: fixed;
     top: 50%;
-    left: 22%;
+    left: 20%;
     font-size: 26px;
     text-shadow: 1px 1px  rgb(0, 0, 0);
     color: #ffffff
 }
-
+.mina-marcada {
+  background-color: green;
+}
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
 .hero {
@@ -157,4 +159,56 @@ button {
             transform: scale(20) rotate(960deg) translate(-50%, -50%);
     opacity: 0;
   }
+}
+
+/*info*/
+.botonInfo{
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  height: 40px;
+  background-color:#958fea;
+border-radius:10px;
+display:inline-block;
+cursor:pointer;
+  color: white;
+font-family:Verdana;
+font-size:12px;
+padding:10px 10px;
+text-decoration:none;
+text-shadow:1px 1px 0px #9752cc;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.botonInfo:hover {
+  background-color:#958fea;
+  transform: scale(1.1);
+}
+
+.divInfo{
+  position: fixed;
+  top: 5px;
+  left: 20px;
+ 
+}
+.infomenu{
+  font-size: 18px;
+  border-radius:2px;
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  background: rgba(255, 255, 255, 0.168);
+  padding: 5px;
+}
+.BcerrarMenu{
+  border-radius:2px;
+  position: fixed;
+  top: 100px;
+  left: 361px; 
+  background: rgba(255, 255, 255, 0.168);
+  border: 0px;
+  cursor: pointer;
+}
+.BcerrarMenu:hover {
+  color:#fdfdfd;
 }

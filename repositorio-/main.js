@@ -49,15 +49,15 @@ function destapa(button, fila, columna) {
     alert('¡Habia una mina ahi!  *explota*  \n -1 vida')
 
     if (vidas === 0) {
-      alert('¡Has perdido! Se acabaron las vidas. Reinicia el juego.');
-      resetearJuego();
+      alert('¡Has perdido! Se acabaron las vidas.');
+      reset();
     }
      
   } else if (minaCercana(fila, columna)) {
     button.style.backgroundColor = 'yellow';
     button.disabled = true;
   } else {
-    button.style.backgroundColor = 'white';
+    button.style.backgroundColor = '#1c7cb4';
     button.disabled = true;
     tablero[fila][columna].destapado = true;
   }
@@ -78,11 +78,35 @@ function minaCercana(fila, columna) {
 
 function actualizarVidas() {
   document.getElementById('vidas').innerText = 'Vidas: ' + vidas;
+  if (vidas === 0) {
+    setTimeout(function() {
+      alert('¡Has perdido! Se acabaron las vidas.');
+      reset();
+    }, 500); 
+  }
 }
 
 function reset() {
- 
   tablero.length = 0; 
   document.querySelector('#matriz').innerHTML = ''; 
   inicializar();
+}
+
+inicializar();
+
+
+function mostrarMenuu() {
+  var menuInfo = document.getElementById('menuInfo');
+  menuInfo.style.display = 'block';
+  
+  var botonInfo = document.getElementById('botonInfo');
+  botonInfo.style.display = 'none';
+}
+
+function cerrarMenuu() {
+  var menuInfo = document.getElementById('menuInfo');
+  menuInfo.style.display = 'none';
+
+  var botonInfo = document.getElementById('botonInfo');
+  botonInfo.style.display = 'block';
 }
