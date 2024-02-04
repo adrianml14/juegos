@@ -14,7 +14,7 @@ function inicializar() {
     }
   }
 
-  let minas = 10;
+  let minas =10;
 
   while (minas > 0) {
     let fila = Math.floor(Math.random() * filas);

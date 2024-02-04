@@ -34,8 +34,8 @@ button {
 .reset{
     z-index: 2;
     position: fixed;
-    top: 45%;
-    left: 73%;
+    top: 45.5%;
+    left: 74%;
 
     height: 70px;
     width: 100px;
@@ -69,9 +69,6 @@ button {
     font-size: 26px;
     text-shadow: 1px 1px  rgb(0, 0, 0);
     color: #ffffff
-}
-.mina-marcada {
-  background-color: green;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
@@ -163,23 +160,24 @@ button {
 
 /*info*/
 .botonInfo{
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  height: 40px;
-  background-color:#958fea;
-border-radius:10px;
-display:inline-block;
-cursor:pointer;
-  color: white;
-font-family:Verdana;
-font-size:12px;
-padding:10px 10px;
-text-decoration:none;
-text-shadow:1px 1px 0px #9752cc;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    height: 40px;
+    width: 100px;
+    background-color:#958fea;
+    border-radius:10px;
+    display:inline-block;
+    cursor:pointer;
+    color: white;
+    font-family:Verdana;
+    font-size:12px;
+    padding:10px 10px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #9752cc;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
 .botonInfo:hover {
   background-color:#958fea;
   transform: scale(1.1);
@@ -196,15 +194,17 @@ text-shadow:1px 1px 0px #9752cc;
   border-radius:2px;
   position: fixed;
   top: 100px;
-  left: 0px;
+  left: 5px;
   background: rgba(255, 255, 255, 0.168);
   padding: 5px;
 }
 .BcerrarMenu{
+  width: 45px;
+  height: 20px;
   border-radius:2px;
   position: fixed;
   top: 100px;
-  left: 361px; 
+  left: 285px; 
   background: rgba(255, 255, 255, 0.168);
   border: 0px;
   cursor: pointer;
