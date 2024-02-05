@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Spock</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="titulo">
+        <h1>Bienvenido <br> Para empezar una nueva partida pulsa en continuar</h1>
+    </div>
+    
+    <div class="hero"> 
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+      </div>
+
+    <div class="botones">
+    <button id="Piedra"  class="Piedra"    onclick="seleccion(1)">Piedra 
+        <img src="https://images.vexels.com/media/users/3/145875/isolated/preview/38e49cb04340edb86ead6b7d6ca55423-ilustracion-de-canto-rodado-de-piedra.png" class="imgPiedra"></button>
+    <button id="Papel"   class="Papel"     onclick="seleccion(2)">Papel  
+    <img src="https://www.imagensempng.com.br/wp-content/uploads/2021/06/06-11.png" class="imgPapel"></button>
+    <button id="Tijera"  class="Tijera"    onclick="seleccion(3)">Tijera 
+     <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/19-Tijeras.png" class="imgTijeras"></button>
+    <button id="Lagarto" class="Lagarto"   onclick="seleccion(4)">Lagarto
+    <img src="https://webstockreview.net/images/gecko-clipart-lizzard-2.png" class="imgLagarto"></button>
+    <button id="Spock"   class="Spock"     onclick="seleccion(5)">Spock  
+    <img src="https://www.pinclipart.com/picdir/big/164-1642347_star-trek-spock-fallout-star-trek-spock-fallout.png" class="imgSpock"></button>
+    </div>
+    
+    <form id="botonNumero" style="text-align: center;">      
+        <label for="cantidadRondas" class="cantidadDeRondas">Cantidad de Rondas:</label>
+        <input type="number" id="cantidadRondas" name="cantidadRondas" min="1" value="1" class="imputRondas">
+        <button type="button" onclick="generarNumero()" class="Jugar">Jugar</button>
+    </form>
+    
+    <div id="resultado" class="resultado"></div>
+    <div id="contador" class="contador">Victorias Jugador: </div>
+    <div id="contadorIA" class="contadorIA">Victorias IA: </div>
+    <div id="rondas" class="rondas">Ronda actual: 0</div>
+
+
+    <button class="botonInfo" onclick="mostrarMenuu()" id="botonInfo"> <b>Información</b> </button>
+    <div id="menuInfo" style="display:none;" class="divinfo">
+        <p class="infomenu"><b>¡¡Buenas usuario!! 
+            <br> Bienvenido a la versión adulterada de piedra papel <br>y tijera.   
+            <br> 
+            Es sencillo, la piedra gana a las tijeras, las tijeras <br> al papel y 
+            el papel a la piedra.
+            <br>
+            ¿Fácil no? Pues no, 
+            sabiendo lo anterior, <br>se implementan la lagartija 
+            y el spock,  <br>la lagartija le gana al papel y al spock, <br>pero 
+            no al resto. El spock solo gana a la piedra y a <br>las  tijeras.
+             <br>
+            Sé que es difícil, adjunto una imagen para que no <br>
+            te pierdas:
+         <br>
+        <img src="https://i0.wp.com/cuak.com/wp-content/uploads/2019/12/piedra-papel-tijera-lagarto-spock1.png?resize=720,622&ssl=1" class="imgInfo">
+            
+        </p>
+         <button onclick="cerrarMenuu()" class="BcerrarMenu"> <b>Cerrar</b></button>  
+    </div>
+    <div id="mensaje" class="mensaje" onload = "cambiarColor()"></div>
+
+    <button id="reset" onclick="resetPartida()" class="reset">Continuar</button>
+    
+</body>
+</html>

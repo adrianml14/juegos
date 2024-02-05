@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Buscaminas</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body onload="inicializar()">
+    <div id="vidas" class="vidas"><b>Vidas: 5</b></div>
+    <div class="matriz" id="matriz"></div>
+    <button onclick="reset()" class="reset">Reiniciar Juego</button>
+    <div class="hero"> 
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+      </div>
+
+      <button class="botonInfo" onclick="mostrarMenuu()" id="botonInfo"> <b>Información</b> </button>
+    <div id="menuInfo" style="display:none;" class="divinfo">
+        <p class="infomenu"><b>¡¡Buenas usuario!! <br> 
+            Este juego es un buscaminas simple, <br>
+            pero si destapas un cuadro y es <br>
+            amarillo, ¡cuidado! hay una mina cerca <br>
+            y solo tienes 5 vidas si las pierdes, <br>
+            perderás. También tienes a tu disposición <br>
+            un botón para reiniciar el juego.
+        </p>
+         <button onclick="cerrarMenuu()" class="BcerrarMenu"> <b>Cerrar</b></button>  
+    </div>
+</body>
+</html>
