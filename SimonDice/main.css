@@ -5,6 +5,7 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #f0f0f0;
+  flex-direction: column;
 }
 
 #simon-board {
@@ -29,4 +30,19 @@ body {
   margin-top: 20px;
   font-size: 24px;
   font-weight: bold;
+}
+
+#start-btn {
+  margin-top: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.highlight {
+  box-shadow: 0 0 20px 5px #c70c0c;
+  
 }

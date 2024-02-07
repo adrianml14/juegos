@@ -3,13 +3,16 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Buscaminas</title>
+    <title>Simón Dice</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-<body onload="startGame()">
-    <div id="simon-board"></div>
-    <div id="score">Puntuación: 0</div>
+<body>
+    <div>
+        <button id="start-btn" onclick="startGame()">Comenzar Juego</button>
+        <div id="simon-board"></div>
+        <div id="score">Puntuación: 0</div>
+    </div>
 </body>
 </html>

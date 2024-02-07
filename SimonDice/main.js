@@ -10,13 +10,13 @@ function createSimonButtons() {
     btn.classList.add('simon-btn');
     btn.dataset.color = color;
     btn.style.backgroundColor = color;
-    btn.innerText = color;  // Agrega el nombre del color al botón
     btn.addEventListener('click', handleButtonClick);
     simonBoard.appendChild(btn);
   });
 }
 
 function startGame() {
+  document.getElementById('start-btn').style.display = 'none';
   createSimonButtons();
   sequence = [];
   userSequence = [];
@@ -38,13 +38,24 @@ function addToSequence() {
 function showSequence() {
   let i = 0;
   const intervalId = setInterval(() => {
-    playColor(sequence[i]);
+    const currentColor = sequence[i];
+    playColor(currentColor);
+    highlightButton(currentColor);
     i++;
+
     if (i >= sequence.length) {
       clearInterval(intervalId);
-      enableUserInput();
+      setTimeout(enableUserInput, 500);
     }
   }, 1000);
+}
+
+function highlightButton(color) {
+  const btn = document.querySelector(`.simon-btn[data-color="${color}"]`);
+  btn.classList.add('highlight');
+  setTimeout(() => {
+    btn.classList.remove('highlight');
+  }, 500);
 }
 
 function playColor(color) {
@@ -99,7 +110,6 @@ function updateScore() {
 
 function endGame() {
   alert(`¡Has perdido! Tu puntuación final es ${score}.`);
-  startGame();
+  document.getElementById('start-btn').style.display = 'block';
+  document.getElementById('simon-board').innerHTML = '';
 }
-
-// Crear botones y comenzar el juego al cargar la página
