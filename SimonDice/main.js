@@ -1,115 +1,103 @@
-const simonColors = ['rojo', 'verde', 'azul', 'amarillo'];
-let sequence = [];
-let userSequence = [];
-let score = 0;
+const colores = ['rojo', 'verde', 'azul', 'amarillo'];
+let secuencia = [];
+let secuenciaUsuario = [];
+let nivel = 0;
 
-function createSimonButtons() {
-  const simonBoard = document.getElementById('simon-board');
-  simonColors.forEach(color => {
-    const btn = document.createElement('div');
-    btn.classList.add('simon-btn');
-    btn.dataset.color = color;
-    btn.style.backgroundColor = color;
-    btn.addEventListener('click', handleButtonClick);
-    simonBoard.appendChild(btn);
-  });
+function iniciarJuego() {
+    secuencia = [];
+    secuenciaUsuario = [];
+    nivel = 0;
+    mostrarMensaje('Sigue la secuencia...');
+    siguienteNivel();
 }
 
-function startGame() {
-  document.getElementById('start-btn').style.display = 'none';
-  createSimonButtons();
-  sequence = [];
-  userSequence = [];
-  score = 0;
-  updateScore();
-  nextRound();
+function siguienteNivel() {
+    secuenciaUsuario = [];
+    nivel++;
+    mostrarMensaje(`Nivel ${nivel}`);
+    agregarASecuencia();
+    reproducirSecuencia();
 }
 
-function nextRound() {
-  addToSequence();
-  showSequence();
+function agregarASecuencia() {
+    const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+    secuencia.push(colorAleatorio);
 }
 
-function addToSequence() {
-  const randomColor = simonColors[Math.floor(Math.random() * 4)];
-  sequence.push(randomColor);
+function reproducirSecuencia() {
+    let i = 0;
+    const intervaloId = setInterval(() => {
+        resaltarCasilla(secuencia[i]);
+        i++;
+        if (i >= secuencia.length) {
+            clearInterval(intervaloId);
+            habilitarEntradaUsuario();
+        }
+    }, 1000);
 }
 
-function showSequence() {
-  let i = 0;
-  const intervalId = setInterval(() => {
-    const currentColor = sequence[i];
-    playColor(currentColor);
-    highlightButton(currentColor);
-    i++;
+function resaltarCasilla(color) {
+    const casilla = document.getElementById(color);
+    casilla.style.opacity = '1';
+    setTimeout(() => {
+        casilla.style.opacity = '0.5';
+    }, 500);
+}
 
-    if (i >= sequence.length) {
-      clearInterval(intervalId);
-      setTimeout(enableUserInput, 500);
+function habilitarEntradaUsuario() {
+    mostrarMensaje('Tu turno...');
+    const casillas = document.querySelectorAll('.casilla');
+    casillas.forEach(casilla => {
+        casilla.addEventListener('click', manejarClickCasilla);
+    });
+}
+
+function deshabilitarEntradaUsuario() {
+    const casillas = document.querySelectorAll('.casilla');
+    casillas.forEach(casilla => {
+        casilla.removeEventListener('click', manejarClickCasilla);
+    });
+}
+
+function manejarClickCasilla(evento) {
+    const colorSeleccionado = evento.target.id;
+    resaltarCasilla(colorSeleccionado);
+    secuenciaUsuario.push(colorSeleccionado);
+
+    if (!verificarEntradaUsuario()) {
+        finJuego();
+    } else if (secuenciaUsuario.length === secuencia.length) {
+        deshabilitarEntradaUsuario();
+        setTimeout(siguienteNivel, 1000);
     }
-  }, 1000);
 }
 
-function highlightButton(color) {
-  const btn = document.querySelector(`.simon-btn[data-color="${color}"]`);
-  btn.classList.add('highlight');
-  setTimeout(() => {
-    btn.classList.remove('highlight');
-  }, 500);
-}
-
-function playColor(color) {
-  console.log(`Simón dice: ${color}`);
-  // Agrega aquí la lógica para reproducir el sonido asociado a cada color
-  // Puedes usar librerías como "Howler.js" para gestionar los sonidos.
-  // Por ahora, solo mostramos un mensaje en la consola.
-}
-
-function enableUserInput() {
-  document.querySelectorAll('.simon-btn').forEach(btn => {
-    btn.style.pointerEvents = 'auto';
-  });
-}
-
-function handleButtonClick(event) {
-  const clickedColor = event.target.dataset.color;
-  playColor(clickedColor);
-  userSequence.push(clickedColor);
-  disableUserInput();
-
-  if (!checkUserInput()) {
-    endGame();
-    return;
-  }
-
-  if (userSequence.length === sequence.length) {
-    score++;
-    updateScore();
-    setTimeout(nextRound, 1000);
-  }
-}
-
-function disableUserInput() {
-  document.querySelectorAll('.simon-btn').forEach(btn => {
-    btn.style.pointerEvents = 'none';
-  });
-}
-
-function checkUserInput() {
-  for (let i = 0; i < userSequence.length; i++) {
-    if (userSequence[i] !== sequence[i]) {
-      return false;
+function verificarEntradaUsuario() {
+    for (let i = 0; i < secuenciaUsuario.length; i++) {
+        if (secuenciaUsuario[i] !== secuencia[i]) {
+            return false;
+        }
     }
-  }
-  return true;
+    return true;
 }
 
-function updateScore() {
-  document.getElementById('score').innerText = `Puntuación: ${score}`;
+function finJuego() {
+    mostrarMensaje('¡Incorrecto! Fin del juego.');
+    deshabilitarEntradaUsuario();
 }
 
-function endGame() {
-  alert(`¡Has perdido! Tu puntuación final es ${score}.`);
-  document.getElementById('start-btn').style.display = 'block';
-  document.getElementById('simon-board').innerHTML = '';
+function mostrarMensaje(mensaje) {
+    const elementoMensaje = document.getElementById('mensaje');
+    elementoMensaje.textContent = mensaje;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tableroJuego = document.getElementById('tablero-juego');
+    colores.forEach(color => {
+        const casilla = document.createElement('div');
+        casilla.id = color;
+        casilla.className = 'casilla';
+        casilla.style.backgroundColor = color;
+        tableroJuego.appendChild(casilla);
+    });
+});
