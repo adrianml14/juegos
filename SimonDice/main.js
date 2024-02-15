@@ -3,7 +3,7 @@ let secuencia = [];
 let secuenciaUsuario = [];
 let nivel = 0;
 
-function  iniciarJuego() {
+function  iniciar() {
     secuencia = [];
     secuenciaUsuario = [];
     nivel = 0;
