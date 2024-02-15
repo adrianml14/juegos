@@ -31,9 +31,9 @@ function reproducirSecuencia() {
         i++;
         if (i >= secuencia.length) {
             clearInterval(intervaloId);
-            habilitarEntradaUsuario();
+            usuario();
         }
-    }, 1000);
+    }, 800);
 }
 
 function resaltarCasilla(color) {
@@ -41,38 +41,38 @@ function resaltarCasilla(color) {
     casilla.style.opacity = '1';
     setTimeout(() => {
         casilla.style.opacity = '0.5';
-    }, 500);
+    }, 250);
 }
 
-function habilitarEntradaUsuario() {
+function usuario() {
     mostrarMensaje('Tu turno...');
     const casillas = document.querySelectorAll('.casilla');
     casillas.forEach(casilla => {
-        casilla.addEventListener('click', manejarClickCasilla);
+        casilla.addEventListener('click', clickBoton);
     });
 }
 
-function deshabilitarEntradaUsuario() {
+function deshabilitarUsuario() {
     const casillas = document.querySelectorAll('.casilla');
     casillas.forEach(casilla => {
-        casilla.removeEventListener('click', manejarClickCasilla);
+        casilla.removeEventListener('click', clickBoton);
     });
 }
 
-function manejarClickCasilla(evento) {
+function clickBoton(evento) {
     const colorSeleccionado = evento.target.id;
     resaltarCasilla(colorSeleccionado);
     secuenciaUsuario.push(colorSeleccionado);
 
-    if (!verificarEntradaUsuario()) {
+    if (!verificarUsuario()) {
         finJuego();
     } else if (secuenciaUsuario.length === secuencia.length) {
-        deshabilitarEntradaUsuario();
+        deshabilitarUsuario();
         setTimeout(siguienteNivel, 1000);
     }
 }
 
-function verificarEntradaUsuario() {
+function verificarUsuario() {
     for (let i = 0; i < secuenciaUsuario.length; i++) {
         if (secuenciaUsuario[i] !== secuencia[i]) {
             return false;
@@ -83,7 +83,7 @@ function verificarEntradaUsuario() {
 
 function finJuego() {
     mostrarMensaje('¡Incorrecto! Fin del juego.');
-    deshabilitarEntradaUsuario();
+    deshabilitarUsuario();
 }
 
 function mostrarMensaje(mensaje) {
