@@ -33,7 +33,7 @@ function reproducirSecuencia() {
             clearInterval(intervaloId);
             usuario();
         }
-    }, 800);
+    }, 800 );
 }
 
 function resaltarCasilla(color) {
@@ -82,8 +82,16 @@ function verificarUsuario() {
 }
 
 function finJuego() {
-    mostrarMensaje('¡Incorrecto! Fin del juego.');
+    mostrarMensaje(`¡Incorrecto! Has llegado hasta el nivel ${nivel}`);
     deshabilitarUsuario();
+    alert(`¡Perdiste! Has llegado hasta el nivel ${nivel}`);
+    setTimeout(() => {
+        reiniciarJuego();
+    }, 500);
+}
+
+function reiniciarJuego() {
+    iniciar();
 }
 
 function mostrarMensaje(mensaje) {

@@ -16,6 +16,7 @@
     background: rgba(255, 255, 255, 0.168)
 }
 
+
 .Piedra{
     position: fixed;
     left: 410px;
@@ -359,7 +360,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
 .hero {
-  background-color: #0040C1;
+  background-color: #1c7cb4;
   position: relative;
   margin: 0;
   top: 0px;
@@ -376,7 +377,7 @@
   left: 45vw;
   width: 10px;
   height: 10px;
-  border: solid 1px #003298;
+  border: solid 1px #224894;
   -webkit-transform-origin: top left;
           transform-origin: top left;
   -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
