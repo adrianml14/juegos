@@ -1,4 +1,4 @@
-const colores = ['rojo', 'verde', 'azul', 'amarillo'];
+
 let secuencia = [];
 let secuenciaUsuario = [];
 let nivel = 0;
@@ -38,7 +38,7 @@ function reproducirSecuencia() {
 
 function resaltarCasilla(color) {
     const casilla = document.getElementById(color);
-    casilla.style.opacity = '1';
+    casilla.style.opacity = '1000';
     setTimeout(() => {
         casilla.style.opacity = '0.5';
     }, 250);
@@ -109,3 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
         tableroJuego.appendChild(casilla);
     });
 });
+
+
+var colores = ["red", "#FF69B4", "#FF00FF", "orange","yellow","#00FFFF", "white","#C0C0C0"]; 
+var indiceColor = 0;
+
+function cambiarColorAutomaticamente() {
+  var elemento = document.getElementById("texto");
+  elemento.style.color = colores[indiceColor];
+  indiceColor = (indiceColor + 1) % colores.length;
+}
+
+setInterval(cambiarColorAutomaticamente, 1000);

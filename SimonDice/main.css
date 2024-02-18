@@ -17,7 +17,7 @@ body {
   font-size: 30px;
   margin-bottom: 40px;
   z-index: 2;
-  color: #246427b2;
+  color: #922ab8b2;
   text-align: center;
   background: rgba(255, 255, 255, 0.152)
 
@@ -51,7 +51,7 @@ body {
 .tablero-juego {
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 2fr);
   gap: 10px;
 }
 
@@ -64,12 +64,15 @@ body {
   opacity: 0.5;
   transition: opacity 0.5s;
   border-radius: 5px;
+  border: 10px;
+  border-color: black;
 }
 
 #mensaje {
   z-index: 2;
   font-size: 20px;
   margin-top: 20px;
+  font-size: 25px;
 }
 
 .info{
