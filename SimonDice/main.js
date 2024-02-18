@@ -90,7 +90,7 @@ function finJuego() {
     }, 500);
 }
 
-function reiniciarJuego() {
+function reiniciarJuego()  {
     iniciar();
 }
 
