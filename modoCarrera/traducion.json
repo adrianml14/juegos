@@ -1,0 +1,16 @@
+{
+    "es": {
+      "intro": "Estás en una encrucijada, frente a ti hay dos caminos. ¿Cuál eliges?",
+      "leftPath": "Te aventuras por el camino de la izquierda y descubres un hermoso jardín.",
+      "rightPath": "Decides tomar el camino de la derecha y caes en una trampa. ¡Oh no!",
+      "happyEnding": "¡Felicidades! Has encontrado un final feliz.",
+      "sadEnding": "Lo siento, has llegado a un final triste."
+    },
+    "en": {
+      "intro": "You are at a crossroad, in front of you are two paths. Which one do you choose?",
+      "leftPath": "You venture down the left path and discover a beautiful garden.",
+      "rightPath": "You decide to take the right path and fall into a trap. Oh no!",
+      "happyEnding": "Congratulations! You have found a happy ending.",
+      "sadEnding": "I'm sorry, you have reached a sad ending."
+    }
+  }
