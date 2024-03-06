@@ -12,7 +12,7 @@ function inicializar() {
     for (let j = 0; j < columnas; j++) {
       tablero[i].push({ tieneMina: false, destapado: false });
     }
-  }
+   }
 
   let minas =10;
 
