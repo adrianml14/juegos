@@ -110,3 +110,14 @@ function cerrarMenuu() {
   var botonInfo = document.getElementById('botonInfo');
   botonInfo.style.display = 'block';
 }
+
+//traducciones
+document.getElementById('selector-idiomaM').addEventListener('change', function(){
+  var idiomaSeleccionado = this.value;
+
+  document.getElementById('vidas').innerHTML = traduccionesM[idiomaSeleccionado].vidas;
+  document.getElementById('reiniciar').innerHTML = traduccionesM[idiomaSeleccionado].reiniciar;
+  document.getElementById('botonInfo').innerHTML = traduccionesM[idiomaSeleccionado].botonInfo;
+  document.getElementById('txtInfo').innerHTML = traduccionesM[idiomaSeleccionado].txtInfo;
+  document.getElementById('cerrarMenu').innerHTML = traduccionesM[idiomaSeleccionado].cerrarMenu;
+})

@@ -9,9 +9,13 @@
     <script src='main.js'></script>
 </head>
 <body onload="inicializar()">
+    
     <div id="vidas" class="vidas"><b>Vidas: 5</b></div>
+    
     <div class="matriz" id="matriz"></div>
-    <button onclick="reset()" class="reset">Reiniciar Juego</button>
+    
+    <button onclick="reset()" class="reset" id="reiniciar">Reiniciar</button>
+    
     <div class="hero"> 
         <div class="cube"></div>
         <div class="cube"></div>
@@ -19,19 +23,30 @@
         <div class="cube"></div>
         <div class="cube"></div>
         <div class="cube"></div>
-      </div>
-
-      <button class="botonInfo" onclick="mostrarMenuu()" id="botonInfo"> <b>Información</b> </button>
-    <div id="menuInfo" style="display:none;" class="divinfo">
-        <p class="infomenu"><b>¡¡Buenas usuario!! <br> 
-            Este juego es un buscaminas simple, <br>
-            pero si destapas un cuadro y es <br>
-            amarillo, ¡cuidado! hay una mina cerca <br>
-            y solo tienes 5 vidas si las pierdes, <br>
-            perderás. También tienes a tu disposición <br>
-            un botón para reiniciar el juego.
-        </p>
-         <button onclick="cerrarMenuu()" class="BcerrarMenu"> <b>Cerrar</b></button>  
     </div>
+      
+    <select  id="selector-idiomaM" class="selector-idioma">
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+        <option value="fr">Francés</option>
+        <option value="fi">Finés</option>
+    </select>
+
+    <button class="botonInfo" onclick="mostrarMenuu()" id="botonInfo"> <b>Información</b> </button>
+    
+    <div id="menuInfo" style="display:none;" class="divinfo">
+        <p class="infomenu" id="txtInfo">
+            <b>¡¡Buenas usuario!! <br> Este juego es un buscaminas simple, 
+                <br>pero si destapas un cuadro y es 
+                <br>amarillo, ¡cuidado! hay una mina cerca 
+                <br>y solo tienes 5 vidas si las pierdes, 
+                <br>perderás. También tienes a tu disposición 
+                <br>un botón para reiniciar el juego.
+        </p>
+         <button onclick="cerrarMenuu()" class="BcerrarMenu" id="cerrarMenu"> <b>Cerrar</b></button>  
+    </div>
+
+    <script src="main.js"></script>
+    <script src="traduccion.js"></script>
 </body>
 </html>

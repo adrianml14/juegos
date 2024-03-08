@@ -11,4 +11,15 @@ var traducciones = {
     "descripcion": "this has to work",
 
   }
+  ,"fr": {
+    "titulo": "Bienvfenido",
+    "descripcion": "esto tiensdeve q funcionar",
+
+
+  },
+  "fi": {
+    "titulo": "Welcoyrsme",
+    "descripcion": "ghfsgbfg",
+
+  }
 };

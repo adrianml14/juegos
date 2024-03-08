@@ -71,8 +71,16 @@ button {
     color: #ffffff
 }
 
+.selector-idioma{
+  z-index: 2;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
 .hero {
+  z-index: 0;
   background-color: #1c7cb4;
   position: relative;
   margin: 0;
@@ -212,3 +220,4 @@ button {
 .BcerrarMenu:hover {
   color:#fdfdfd;
 }
+
