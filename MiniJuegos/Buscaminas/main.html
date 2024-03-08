@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -9,13 +9,10 @@
     <script src='main.js'></script>
 </head>
 <body onload="inicializar()">
-    
-    <div id="vidas" class="vidas"><b>Vidas: 5</b></div>
-    
+    <div id="vidas" class="vidas"><b> 5</b></div>
+    <h2 class="txVidas" id="txVidas">Vidas: </h2>
     <div class="matriz" id="matriz"></div>
-    
     <button onclick="reset()" class="reset" id="reiniciar">Reiniciar</button>
-    
     <div class="hero"> 
         <div class="cube"></div>
         <div class="cube"></div>
@@ -24,16 +21,13 @@
         <div class="cube"></div>
         <div class="cube"></div>
     </div>
-      
-    <select  id="selector-idiomaM" class="selector-idioma">
-        <option value="es">Español</option>
-        <option value="en">Inglés</option>
-        <option value="fr">Francés</option>
-        <option value="fi">Finés</option>
+    <select id="selector-idiomaM" class="selector-idioma">
+        <option value="es">🇪🇸​</option>
+        <option value="en">🇬🇧​</option>
+        <option value="fr">🇫🇷​​</option>
+        <option value="fi">🇫🇮</option>
     </select>
-
     <button class="botonInfo" onclick="mostrarMenuu()" id="botonInfo"> <b>Información</b> </button>
-    
     <div id="menuInfo" style="display:none;" class="divinfo">
         <p class="infomenu" id="txtInfo">
             <b>¡¡Buenas usuario!! <br> Este juego es un buscaminas simple, 
@@ -43,9 +37,8 @@
                 <br>perderás. También tienes a tu disposición 
                 <br>un botón para reiniciar el juego.
         </p>
-         <button onclick="cerrarMenuu()" class="BcerrarMenu" id="cerrarMenu"> <b>Cerrar</b></button>  
+        <button onclick="cerrarMenuu()" class="BcerrarMenu" id="cerrarMenu"> <b>Cerrar</b></button>  
     </div>
-
     <script src="main.js"></script>
     <script src="traduccion.js"></script>
 </body>

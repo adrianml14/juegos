@@ -38,7 +38,7 @@ button {
     left: 74%;
 
     height: 70px;
-    width: 100px;
+    width: 130px;
     padding-top: 5px;
     background-color: #ccc; 
     border: 1px solid #999; 
@@ -50,7 +50,7 @@ button {
     color:#ffffff;
     font-family:Verdana;
     font-size:20px;
-    padding:10px 10px;
+    padding:10px 5px;
     text-decoration:none;
     text-shadow:1px 1px 0px #9752cc;
     cursor: pointer;
@@ -60,7 +60,15 @@ button {
 	background-color:#9c93d6;
     transform: scale(1.1);
 }
-
+.txVidas{
+  z-index: 2;
+  position: fixed;
+  top: 46%;
+  left: 18.5%;
+  font-size: 26px;
+  text-shadow: 1px 1px  rgb(0, 0, 0);
+  color: #ffffff
+}
 .vidas{
     z-index: 2;
     position: fixed;
@@ -76,6 +84,10 @@ button {
   position: fixed;
   bottom: 5px;
   right: 5px;
+  width: 100px;
+  height: 40px;
+
+  border-radius: 5px
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
@@ -172,14 +184,14 @@ button {
     top: 100px;
     left: 20px;
     height: 40px;
-    width: 100px;
+    width: 110px;
     background-color:#958fea;
     border-radius:10px;
     display:inline-block;
     cursor:pointer;
     color: white;
     font-family:Verdana;
-    font-size:12px;
+    font-size:13px;
     padding:10px 10px;
     text-decoration:none;
     text-shadow:1px 1px 0px #9752cc;
@@ -220,4 +232,5 @@ button {
 .BcerrarMenu:hover {
   color:#fdfdfd;
 }
+
 
