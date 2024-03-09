@@ -121,3 +121,17 @@ function cambiarColorAutomaticamente() {
 }
 
 setInterval(cambiarColorAutomaticamente, 1000);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // traducciones
+    document.getElementById('selector-idiomaS').addEventListener('change', function(){
+        var idiomaSeleccionado = this.value;
+  
+        document.getElementById('titulo').innerHTML = traduccionesD[idiomaSeleccionado].titulo;
+        document.getElementById('btnIniciar').textContent = traduccionesD[idiomaSeleccionado].btnIniciar;
+        document.getElementById('texto').innerHTML = traduccionesD[idiomaSeleccionado].texto;
+        
+
+    });
+  });

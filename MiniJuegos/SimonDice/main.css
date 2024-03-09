@@ -31,7 +31,7 @@ body {
   
 }
 
-#btn-iniciar {
+#btnIniciar {
   z-index: 2;
   padding: 10px 20px;
   font-size: 18px;
@@ -44,7 +44,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-#btn-iniciar:hover{
+#btnIniciar:hover{
   transform: scale(1.1);
 }
 
@@ -82,6 +82,17 @@ body {
   top: 200px;
   left: 30px
 
+}
+
+.selector-idioma{
+  z-index: 2;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  width: 100px;
+  height: 40px;
+
+  border-radius: 5px
 }
 
 /*-----------------------------------------------------------------------------------------------------*/
