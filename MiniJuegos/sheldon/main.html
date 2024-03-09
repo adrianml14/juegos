@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="titulo">
-        <h1>Bienvenido <br> Para empezar una nueva partida pulsa en continuar</h1>
+        <h1 id="titulo">Bienvenido <br> Para empezar una nueva partida pulsa en continuar</h1>
     </div>
     
     <div class="hero"> 
@@ -21,6 +21,13 @@
         <div class="cube"></div>
         <div class="cube"></div>
       </div>
+
+      <select id="selector-idiomaS" class="selector-idioma">
+        <option value="es">🇪🇸​</option>
+        <option value="en">🇬🇧​</option>
+        <option value="fr">🇫🇷​​</option>
+        <option value="fi">🇫🇮</option>
+    </select>
 
     <div class="botones">
     <button id="Piedra"  class="Piedra"    onclick="seleccion(1)">Piedra 
@@ -36,9 +43,9 @@
     </div>
     
     <form id="botonNumero" style="text-align: center;">      
-        <label for="cantidadRondas" class="cantidadDeRondas">Cantidad de Rondas:</label>
+        <label for="cantidadRondas" class="cantidadDeRondas" id="CantidadRondas">Cantidad de Rondas:</label>
         <input type="number" id="cantidadRondas" name="cantidadRondas" min="1" value="1" class="imputRondas">
-        <button type="button" onclick="generarNumero()" class="Jugar">Jugar</button>
+        <button type="button" onclick="generarNumero()" class="Jugar" id="jugar">Jugar</button>
     </form>
     
     <div id="resultado" class="resultado"></div>
@@ -49,7 +56,7 @@
 
     <button class="botonInfo" onclick="mostrarMenuu()" id="botonInfo"> <b>Información</b> </button>
     <div id="menuInfo" style="display:none;" class="divinfo">
-        <p class="infomenu"><b>¡¡Buenas usuario!! 
+        <p class="infomenu" id="infomenu"><b>¡¡Buenas usuario!! 
             <br> Bienvenido a la versión adulterada de piedra papel <br>y tijera.   
             <br> 
             Es sencillo, la piedra gana a las tijeras, las tijeras <br> al papel y 
@@ -71,6 +78,6 @@
     <div id="mensaje" class="mensaje" onload = "cambiarColor()"></div>
 
     <button id="reset" onclick="resetPartida()" class="reset">Continuar</button>
-    
+    <script src="traduccion.js"></script>
 </body>
 </html>

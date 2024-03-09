@@ -147,6 +147,17 @@
 
     transform: scale(1.1);
 }
+
+.selector-idioma{
+    z-index: 2;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 100px;
+    height: 40px;
+  
+    border-radius: 5px
+  }
 /*-----------------*/
 .botones{
     top: 50%;

@@ -208,3 +208,26 @@ function cambiarColorAutomaticamente() {
   indiceColor = (indiceColor + 1) % colores.length;
 }
 setInterval(cambiarColorAutomaticamente, 1000);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // traducciones
+    document.getElementById('selector-idiomaS').addEventListener('change', function(){
+        var idiomaSeleccionado = this.value;
+  
+        document.getElementById('titulo').innerHTML = traduccionesS[idiomaSeleccionado].titulo;
+        document.getElementById('Piedra').textContent = traduccionesS[idiomaSeleccionado].Piedra;
+        document.getElementById('Papel').textContent = traduccionesS[idiomaSeleccionado].Papel;
+        document.getElementById('Tijera').textContent = traduccionesS[idiomaSeleccionado].Tijera;
+        document.getElementById('Lagarto').textContent = traduccionesS[idiomaSeleccionado].Lagarto;
+        document.getElementById('Spock').textContent = traduccionesS[idiomaSeleccionado].Spock;
+        document.getElementById('CantidadRondas').innerHTML = traduccionesS[idiomaSeleccionado].CantidadRondas;
+        document.getElementById('jugar').innerHTML = traduccionesS[idiomaSeleccionado].jugar;
+        document.getElementById('contador').innerHTML = traduccionesS[idiomaSeleccionado].contador;
+        document.getElementById('contadorIA').innerHTML = traduccionesS[idiomaSeleccionado].contadorIA;
+        document.getElementById('rondas').innerHTML = traduccionesS[idiomaSeleccionado].rondas;
+        document.getElementById('botonInfo').innerHTML = traduccionesS[idiomaSeleccionado].botonInfo;
+        document.getElementById('infomenu').innerHTML = traduccionesS[idiomaSeleccionado].infomenu;
+        document.getElementById('BcerrarMenu').innerHTML = traduccionesS[idiomaSeleccionado].BcerrarMenu;
+        document.getElementById('reset').innerHTML = traduccionesS[idiomaSeleccionado].reset;
+    });
+  });
