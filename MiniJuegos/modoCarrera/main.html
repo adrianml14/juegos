@@ -1,25 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <title>Storytelling Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Interactive Story Game</title>
 </head>
 <body>
-  <h1 id="titulo">eee</h1>
-  <p id="descripcion"></p>
 
-  <select  id="selector-idioma">
-    <option value="es">Español</option>
-    <option value="en">Inglés</option>
-    <option value="fr">Francés</option>
-    <option value="fi">Finlandés</option>
-</select>
+    <div class="hero"> 
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
 
-<h2 id="mensaje"></h2>
+    <div id="story" class="container">
+        <p id="chapter">Capítulo 1</p>
+        <p id="mensaje">Bienvenido a la historia. Elige tu camino:</p>
+        <div id="buttons">
+            <button onclick="ElegirCamino('izquierda')">Ir por la izquierda</button>
+            <button onclick="ElegirCamino('derecha')">Ir por la derecha</button>
+        </div>
+    </div>
+    <div class="hero"> 
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
 
-<script src="main.js"></script>
-<script src="traduccion.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
