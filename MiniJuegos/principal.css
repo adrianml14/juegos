@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botonSheldon {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .botonBuscaminas {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .botonSimon {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .botonCarrera {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
