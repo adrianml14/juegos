@@ -177,3 +177,6 @@ function actualizarHistoria() {
 }
 
 actualizarHistoria();
+
+
+//hacer let historia Es, En, FR, FI, y te obiga a elegir el idioma al entrar

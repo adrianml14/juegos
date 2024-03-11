@@ -63,7 +63,7 @@ var traduccionesS = {
         "contadorIA": "Tietokoneen voitot: ",
         "rondas": "Nykyinen kierros: 0",
         "botonInfo": "Tiedot",
-        "infomenu": "<b>Moi käyttäjä!! <br> Tervetuloa yksinkertaiseen kivi-paperi <br>ja sakset -peliin.<br>Se on helppoa, kivi voittaa sakset, sakset voittavat <br>paperin ja paperi voittaa kiven.<br>Helppoa, vai mitä?",
+        "infomenu": "<b>Moi käyttäjä!! <br> Tervetuloa yksinkertaiseen kivi-paperi <br>ja sakset -peliin.<br>Se on helppoa, kivi voittaa sakset, sakset voittavat <br>paperin ja paperi voittaa kiven.<br>Helppoa, vai mitä? <br>",
         "BcerrarMenu": "Fermer",
         "reset": "Continuer"
     }

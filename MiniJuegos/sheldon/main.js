@@ -215,11 +215,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var idiomaSeleccionado = this.value;
   
         document.getElementById('titulo').innerHTML = traduccionesS[idiomaSeleccionado].titulo;
-        document.getElementById('Piedra').textContent = traduccionesS[idiomaSeleccionado].Piedra;
-        document.getElementById('Papel').textContent = traduccionesS[idiomaSeleccionado].Papel;
-        document.getElementById('Tijera').textContent = traduccionesS[idiomaSeleccionado].Tijera;
-        document.getElementById('Lagarto').textContent = traduccionesS[idiomaSeleccionado].Lagarto;
-        document.getElementById('Spock').textContent = traduccionesS[idiomaSeleccionado].Spock;
+        document.getElementById('piedra').textContent = traduccionesS[idiomaSeleccionado].Piedra;
+        document.getElementById('papel').textContent = traduccionesS[idiomaSeleccionado].Papel;
+        document.getElementById('tijera').textContent = traduccionesS[idiomaSeleccionado].Tijera;
+        document.getElementById('lagarto').textContent = traduccionesS[idiomaSeleccionado].Lagarto;
+        document.getElementById('spock').textContent = traduccionesS[idiomaSeleccionado].Spock;
         document.getElementById('CantidadRondas').innerHTML = traduccionesS[idiomaSeleccionado].CantidadRondas;
         document.getElementById('jugar').innerHTML = traduccionesS[idiomaSeleccionado].jugar;
         document.getElementById('contador').innerHTML = traduccionesS[idiomaSeleccionado].contador;
