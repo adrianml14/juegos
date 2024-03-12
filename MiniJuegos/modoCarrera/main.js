@@ -66,15 +66,15 @@ let historia = {
     10: {
         mensaje: 'Intentas luchar el camponato de España con Citroën, y haces un año espectacular y te proclamas Campeón de España de Rallyes, \n Citroën te da a elegir si quieres seguir corriendo en España para revalidar el titulo o das al salto al WRC2, ¿que quieres hacer?',
         opciones: {
-            Quedarse: 20,
-            IntentarWRC2: 21,
+            Quedarse: 21,
+            IntentarWRC2: 20,
         },
     },
     11: {
         mensaje: 'Vuelves a intentar el WRC2 pero esta vez obteniendo mejores resultados, sabes que por tu edad es tu ultima oportunidad de destacar,\nCitroën te da la opcion de seguir a intentar ganar el WRC2 pero te llega la oferta de Hyundai para ser piloto probador de la maxima categoria mundial, ¿Que haces?',
         opciones: {
-            SeguirCitroën: 22,
-            IrseHyundai: 23,
+            SeguirCitroën: 20,
+            IrseHyundai: 22,
         },
     },
     12: {
@@ -85,66 +85,80 @@ let historia = {
         },
     },
     13: {
-        mensaje: '',
+        mensaje: 'Tu nuevo copiloto es Borja Rozada, con mucha experiencia pero nuevo para ti, haceis un buen año peleando por el campeonato, \n por lo tanto decides pelear el año siguiente el SCER',
         opciones: {
-            beberAgua: 22,
-            seguirExplorandoLlanura: 23,
+            Continuar:19
         },
     },
     14: {
-        mensaje: '',
+        mensaje: 'Haces un grandisimo papel en los pocos rallyes del WRC2 que corres, y aunque no ganes el campeonato de España, Toyota te da la opotunidad de correr en WRC2, \n ¿que quieres hacer?',
         opciones: {
-            explorarValle: 20,
-            explorarCima: 21,
+            WRC2: 20,
+            PelearSCER: 21,
         },
     },
     15: {
-        mensaje: '',
+        mensaje: 'Intentas luchar el camponato de España con Toyota, y haces un año espectacular y te proclamas Campeón de España de Rallyes, \n Toyota te da a elegir si quieres seguir corriendo en España para revalidar el titulo o das al salto al WRC2, ¿que quieres hacer?',
         opciones: {
-            beberAgua: 22,
-            seguirExplorandoLlanura: 23,
+            SCER: 21,
+            IntentarWRC2: 23,
         },
     },
     16: {
-        mensaje: 'Pides ser titular y tu jefe se enfada por tu impaciencia, aunque te da una oportunidad en el proximo rally, \n si no obtienes un top 3 te echará, ¿Quieres intentarlo en ese rally o te vas del equipo?',
+        mensaje: 'Pides ser titular y tu jefe se enfada por tu impaciencia, aunque te da una oportunidad en el proximo rally, \n si no obtienes un top 3 te echará, ¿Quieres intentarlo en ese rally o vuelves a tus inicios?',
         opciones: {
-            IntentarElRally: 22,
+            IntentarElRally: 24,
             Irse: 9,
         },
     },
     17: {
-        mensaje: '',
+        mensaje: 'Eres paciente y esperas tu oportunidad, Citroën te recompensa con la oportunidad de correr el WRC2 o el Campeonato de España(SCER)',
         opciones: {
-            explorarValle: 20,
-            explorarCima: 21,
+            SCER: 10,
+            WRC2: 23,
         },
     },
     18: {
-        mensaje: '',
+        mensaje: 'Te conviertes en la persona con mas titulos regionales de Asturias y te retiras oficialmente como un heroe y creas una escuela de conduccion',
         opciones: {
-            beberAgua: 22,
-            seguirExplorandoLlanura: 23,
+            Fin: 1
         },
     },
     19: {
-        mensaje: '',
+        mensaje: 'Comienzas bien el año aunque en uno de los rallyes de fin de año , te quedas sin frenos y tienes un accidente grave que te aparta de los rallyes para siempre...',
         opciones: {
-            beberAgua: 22,
-            seguirExplorandoLlanura: 23,
+            Fin: 1
         },
     },
     20: {
-        mensaje: '',
+        mensaje: 'Corres en el WRC2, sabes que es tu ultimo intento debido a tu edad y das lo mejor de ti. Llegas al ultimo rally con opciones de ganar el WRC2, lo cual lo haces \n y te conviertes en el primer campeon español desde Dani Sordo en 2005, \ndecides retirarte como una leyenda...',
         opciones: {
-            explorarValle: 20,
-            explorarCima: 21,
+            Fin: 1
         },
     },
     21: {
-        mensaje: '',
+        mensaje: 'Te conviertes en una leyenda del automovilismo español, con varios campeonatos nacionales a tus espaldas te retiras como tal...',
         opciones: {
-            beberAgua: 22,
-            seguirExplorandoLlanura: 23,
+            Fin: 1
+        },
+    },
+    22: {
+        mensaje: 'Llegas a la maxima categoria mundial, un sueño hecho realidad, en tu primer año te adaptas al nuevo Hyundai y a la maxima categoria,\npero en el segundo año das una leccion de conduccion extraordinaria y te conviertes en campeon del mundo de rallyes,\nes el cierre perfecto para tu carrera ',
+        opciones: {
+            Fin: 1
+        },
+    },
+
+    23: {
+        mensaje: 'Corres en el WRC2, sabes que es tu ultimo intento debido a tu edad y das lo mejor de ti. Debido a tus nervios no consigues ser campeon, \npero te retiras como una persona muy respetada dentro del mundillo',
+        opciones: {
+            Fin: 1
+        },
+    },
+    24: {
+        mensaje: 'Consigues el objetivo y tu jefe ya confia lo suficiente en ti para correr el Campeonato de España de rallyes',
+        opciones: {
+            Continuar: 10
         },
     },
 };

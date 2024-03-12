@@ -228,6 +228,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('botonInfo').innerHTML = traduccionesS[idiomaSeleccionado].botonInfo;
         document.getElementById('infomenu').innerHTML = traduccionesS[idiomaSeleccionado].infomenu;
         document.getElementById('BcerrarMenu').innerHTML = traduccionesS[idiomaSeleccionado].BcerrarMenu;
-        document.getElementById('reset').innerHTML = traduccionesS[idiomaSeleccionado].reset;
+        document.getElementById('resett').innerHTML = traduccionesS[idiomaSeleccionado].resett;
     });
   });
