@@ -1,5 +1,5 @@
 let capituloActual = 1;
-let historia = {
+let historiaEspañol = {
     1: {
         mensaje: 'Eres un piloto joven muy prometedor, Citroën te da la oportunidad de elegir que hacer el año que viene:\n¿Quieres dar el gran salto al WRC2 (2ª Categoria Mundial) o prefieres quedarte a disputar el SCER(Campeonato de España)?',
         opciones: {
