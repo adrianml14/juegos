@@ -116,5 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('botonInfo').innerHTML = traduccionesM[idiomaSeleccionado].botonInfo;
       document.getElementById('txtInfo').innerHTML = traduccionesM[idiomaSeleccionado].txtInfo;
       document.getElementById('cerrarMenu').innerHTML = traduccionesM[idiomaSeleccionado].cerrarMenu;
+      document.getElementById('volver').innerHTML = traduccionesM[idiomaSeleccionado].volver;
   });
 });

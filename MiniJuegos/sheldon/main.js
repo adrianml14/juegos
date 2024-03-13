@@ -229,5 +229,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('infomenu').innerHTML = traduccionesS[idiomaSeleccionado].infomenu;
         document.getElementById('BcerrarMenu').innerHTML = traduccionesS[idiomaSeleccionado].BcerrarMenu;
         document.getElementById('resett').innerHTML = traduccionesS[idiomaSeleccionado].resett;
+        document.getElementById('volver').innerHTML = traduccionesS[idiomaSeleccionado].volver;
     });
   });

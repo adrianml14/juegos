@@ -5,12 +5,14 @@ var traduccionesD = {
         "texto": "¡¡Sigue el patrón para <br>llegar al máximo posible!!",
         "mensajeIncorrecto": "¡Incorrecto!",
         "mensajePerdida": "¡Perdiste!",
+        "volver":"Volver"
     },
     "en": {
         "titulo": "Simon Says",
         "btnIniciar": "Start Game",
         "texto": "Follow the pattern to <br>reach the highest score <br>possible!!",
         "mensajeIncorrecto": "Incorrect!",
+        "volver":"Back",
         "mensajePerdida": "You lost!",
     },
     "fr": {
@@ -19,6 +21,7 @@ var traduccionesD = {
         "texto": "Suivez le motif pour <br>atteindre le score maximum <br>possible !!",
         "mensajeIncorrecto": "Incorrect !",
         "mensajePerdida": "Tu as perdu !",
+        "volver":"Revenir"
     },
     "fi": {
         "titulo": "Simon Sanoo",
@@ -26,5 +29,6 @@ var traduccionesD = {
         "texto": "Seuraa kuvioita <br>päästäksesi mahdollisimman <br>korkealle pisteet!!",
         "mensajeIncorrecto": "Väärin!",
         "mensajePerdida": "Hävisit!",
+        "volver":"Palata"
     }
 };

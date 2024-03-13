@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('titulo').innerHTML = traduccionesD[idiomaSeleccionado].titulo;
         document.getElementById('btnIniciar').textContent = traduccionesD[idiomaSeleccionado].btnIniciar;
         document.getElementById('texto').innerHTML = traduccionesD[idiomaSeleccionado].texto;
-        
+        document.getElementById('volver').innerHTML = traduccionesD[idiomaSeleccionado].volver;
 
     });
   });
