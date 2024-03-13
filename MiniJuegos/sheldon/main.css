@@ -371,6 +371,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
 .hero {
+    z-index: 0;
   background-color: #1c7cb4;
   position: relative;
   margin: 0;
