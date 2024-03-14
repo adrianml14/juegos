@@ -30,27 +30,27 @@ button {
 }
 
 .botonSheldon {
-  background-color: #3498db;
+  background-color: #db3434;
   color: #fff;
 }
 
 .botonBuscaminas {
-  background-color: #e74c3c; 
+  background-color: #db3434; 
   color: #fff;
 }
 
 .botonSimon {
-  background-color: #27ae60;
+  background-color: #db3434;
   color: #fff;
 }
 
 .botonCarrera {
-  background-color: #f39c12; 
+  background-color: #db3434; 
   color: #fff;
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #9f3131;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
@@ -128,5 +128,16 @@ button:hover {
             transform: scale(20) rotate(960deg) translate(-50%, -50%);
     opacity: 0;
   }
+}
+
+.selector-idioma{
+  z-index: 2;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  width: 100px;
+  height: 40px;
+
+  border-radius: 5px
 }
 
